@@ -1,0 +1,11 @@
+query RunInput {
+  cart {
+    lines {
+      id
+      quantity
+      discountAmount: attribute(key: "_volumeDiscountDiscountPercentage") {
+        value
+      }
+    }
+  }
+}
