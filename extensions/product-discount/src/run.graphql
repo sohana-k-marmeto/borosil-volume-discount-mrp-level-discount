@@ -3,8 +3,22 @@ query RunInput {
     lines {
       id
       quantity
-      discountAmount: attribute(key: "_volumeDiscountDiscountPercentage") {
-        value
+      cost {
+        amountPerQuantity {
+          amount
+        }
+        compareAtAmountPerQuantity {
+          amount
+        }
+      }
+      merchandise {
+        __typename ... on ProductVariant {
+          product {
+            metafield (namespace: "custom" key: "volume_discount_qty_and_discount_percentage") {
+              value
+            }
+          }
+        }
       }
     }
   }

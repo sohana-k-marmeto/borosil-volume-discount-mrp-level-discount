@@ -21,3 +21,4 @@ embedded = false
 
 [build]
 include_config_on_deploy = true
+dev_store_url = "arshiyas-development-store.myshopify.com"
