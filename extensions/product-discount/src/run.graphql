@@ -11,10 +11,17 @@ query RunInput {
           amount
         }
       }
+      volumeDiscountProduct: attribute(key: "_volumeDiscountProduct") {
+        value
+      }
       merchandise {
-        __typename ... on ProductVariant {
+        __typename
+        ... on ProductVariant {
           product {
-            metafield (namespace: "custom" key: "volume_discount_qty_and_discount_percentage") {
+            metafield(
+              namespace: "custom"
+              key: "volume_discount_qty_and_discount_percentage"
+            ) {
               value
             }
           }
